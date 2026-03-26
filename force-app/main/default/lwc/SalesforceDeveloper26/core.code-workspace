@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "c:/Users/dines/.sf/Salesforce2026/force-app/main/default/lwc/SalesforceDeveloper26"
+    }
+  ],
+  "settings": {
+    "eslint.workingDirectories": [
+      "c:/Users/dines/.sf/Salesforce2026/force-app/main/default/lwc/SalesforceDeveloper26"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "typescript"
+    ],
+    "eslint.options": {
+      "overrideConfigFile": "c:\\Users\\dines\\.sf\\Salesforce2026\\force-app\\main\\default\\lwc\\SalesforceDeveloper26\\.eslintrc.json"
+    }
+  }
+}

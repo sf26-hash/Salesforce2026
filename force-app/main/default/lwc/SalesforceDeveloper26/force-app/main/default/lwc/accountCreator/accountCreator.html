@@ -1,0 +1,67 @@
+<template>
+    <lightning-card title="Account Creator" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="Account Name"
+                type="text"
+                data-id="accountName"
+                placeholder="e.g. Tata Consultancy"
+                class="slds-m-bottom_small">
+            </lightning-input>
+
+            <lightning-input
+                label="Phone"
+                type="tel"
+                data-id="phone"
+                placeholder="e.g. 9876543210"
+                class="slds-m-bottom_small">
+            </lightning-input>
+
+            <lightning-combobox
+                label="Industry"
+                data-id="industry"
+                placeholder="Select Industry"
+                options={industryOptions}
+                class="slds-m-bottom_small">
+            </lightning-combobox>
+
+            <lightning-input
+                label="Website"
+                type="url"
+                data-id="website"
+                placeholder="e.g. https://www.tcs.com"
+                class="slds-m-bottom_small">
+            </lightning-input>
+
+            <lightning-button
+                label="Create Account"
+                variant="brand"
+                onclick={handleCreate}
+                class="slds-m-top_small">
+            </lightning-button>
+
+            <lightning-button
+                label="Reset"
+                variant="neutral"
+                onclick={handleReset}
+                class="slds-m-left_small slds-m-top_small">
+            </lightning-button>
+
+            <!-- Success Message -->
+            <template if:true={successMsg}>
+                <div class="slds-box slds-theme_success slds-m-top_medium">
+                    <p>{successMsg}</p>
+                </div>
+            </template>
+
+            <!-- Error Message -->
+            <template if:true={errorMsg}>
+                <div class="slds-box slds-theme_error slds-m-top_medium">
+                    <p>{errorMsg}</p>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

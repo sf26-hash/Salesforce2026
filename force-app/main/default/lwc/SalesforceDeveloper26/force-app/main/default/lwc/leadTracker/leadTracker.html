@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Lead Tracker" icon-name="standard:lead">
+        <div class="slds-p-around_medium">
+
+            <!-- Lead Table -->
+            <template if:true={leads.data}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={leads.data} for:item="lead">
+                            <tr key={lead.Id}>
+                                <td>{lead.Name}</td>
+                                <td>{lead.Company}</td>
+                                <td>{lead.Status}</td>
+                                <td>
+                                    <lightning-button
+                                        label="Mark Contacted"
+                                        variant="brand"
+                                        data-id={lead.Id}
+                                        onclick={handleUpdate}>
+                                    </lightning-button>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template if:true={leads.error}>
+                <p class="slds-text-color_error">Error loading leads.</p>
+            </template>
+
+            <!-- Success / Error -->
+            <template if:true={successMsg}>
+                <div class="slds-box slds-theme_success slds-m-top_small">
+                    <p>{successMsg}</p>
+                </div>
+            </template>
+
+            <template if:true={errorMsg}>
+                <div class="slds-box slds-theme_error slds-m-top_small">
+                    <p>{errorMsg}</p>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
