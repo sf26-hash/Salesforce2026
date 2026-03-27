@@ -2,30 +2,48 @@
     <lightning-card title="Lead Tracker" icon-name="standard:lead">
         <div class="slds-p-around_medium">
 
-            <!-- Lead Table -->
+            <template if:true={successMsg}>
+                <div class="slds-notify slds-notify_toast slds-theme_success
+                            slds-m-bottom_small">
+                    <p>{successMsg}</p>
+                </div>
+            </template>
+
+            <template if:true={errorMsg}>
+                <div class="slds-notify slds-notify_toast slds-theme_error
+                            slds-m-bottom_small">
+                    <p>{errorMsg}</p>
+                </div>
+            </template>
+
             <template if:true={leads.data}>
-                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <table class="slds-table slds-table_cell-buffer
+                              slds-table_bordered">
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Company</th>
+                        <tr class="slds-line-height_reset">
+                            <th>Lead Name</th>
+                            <th>Lead Source</th>
+                            <th>Industry</th>
+                            <th>Rating</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Update Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <template for:each={leads.data} for:item="lead">
                             <tr key={lead.Id}>
                                 <td>{lead.Name}</td>
-                                <td>{lead.Company}</td>
+                                <td>{lead.LeadSource}</td>
+                                <td>{lead.Industry}</td>
+                                <td>{lead.Rating}</td>
                                 <td>{lead.Status}</td>
                                 <td>
-                                    <lightning-button
-                                        label="Mark Contacted"
-                                        variant="brand"
+                                    <lightning-combobox
                                         data-id={lead.Id}
-                                        onclick={handleUpdate}>
-                                    </lightning-button>
+                                        placeholder="Update Status"
+                                        options={statusOptions}
+                                        onchange={handleStatusChange}>
+                                    </lightning-combobox>
                                 </td>
                             </tr>
                         </template>
@@ -34,20 +52,9 @@
             </template>
 
             <template if:true={leads.error}>
-                <p class="slds-text-color_error">Error loading leads.</p>
-            </template>
-
-            <!-- Success / Error -->
-            <template if:true={successMsg}>
-                <div class="slds-box slds-theme_success slds-m-top_small">
-                    <p>{successMsg}</p>
-                </div>
-            </template>
-
-            <template if:true={errorMsg}>
-                <div class="slds-box slds-theme_error slds-m-top_small">
-                    <p>{errorMsg}</p>
-                </div>
+                <p class="slds-text-color_error">
+                    Error loading leads.
+                </p>
             </template>
 
         </div>
