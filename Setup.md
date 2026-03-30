@@ -1,6 +1,6 @@
 # 🚀 Salesforce2026 — Local Setup Guide
 
-> Step-by-step guide to clone and run this Salesforce project on your local machine.
+> A complete step-by-step guide to clone, setup and run this Salesforce project locally
 
 ---
 

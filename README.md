@@ -1,18 +1,25 @@
-# Salesforce DX Project: Next Steps
+# Salesforce2026 — Mini POC Projects
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A collection of Salesforce Lightning Web Component (LWC) and Apex mini projects built as part of interview preparation.
 
-## How Do You Plan to Deploy Your Changes?
+## Projects Included
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- **Lead Tracker** — Track and update lead status using LWC + Apex
+- **Contact Manager** — Manage Salesforce contacts via LWC
+- **Simple Interest Calculator** — LWC based calculator component
+- **Lead Score Calculator** — Score leads dynamically using Apex logic
 
-## Configure Your Salesforce DX Project
+## Tech Stack
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- Salesforce LWC (Lightning Web Components)
+- Apex Classes
+- SOQL
+- Salesforce CLI
 
-## Read All About It
+## Setup
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+See [SETUP.md](./SETUP.md) for full local setup instructions.
+
+## Author
+
+Dinesh — [github.com/sf26-hash](https://github.com/sf26-hash)
